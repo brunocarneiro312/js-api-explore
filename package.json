@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/brunocarneiro312/js-api-explore/issues"
   },
-  "homepage": "https://github.com/brunocarneiro312/js-api-explore#readme"
+  "homepage": "https://github.com/brunocarneiro312/js-api-explore#readme",
+  "devDependencies": {
+    "jquery": "^3.3.1"
+  }
 }
