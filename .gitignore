@@ -1,6 +1,6 @@
 /.idea
 /.git
 /node_modules
-/dist
+app/dist
 gulpfile.js
 package-lock.json
