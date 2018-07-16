@@ -1,0 +1,27 @@
+{
+  "name": "js-api-explore",
+  "version": "1.0.0",
+  "description": "Explorando a API do Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunocarneiro312/js-api-explore.git"
+  },
+  "keywords": [
+    "js",
+    "api",
+    "html",
+    "frontend",
+    "development",
+    "code"
+  ],
+  "author": "bruno.carneiro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brunocarneiro312/js-api-explore/issues"
+  },
+  "homepage": "https://github.com/brunocarneiro312/js-api-explore#readme"
+}
