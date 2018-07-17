@@ -2,6 +2,8 @@
     var gulp = require('gulp');
     var concat = require('gulp-concat');
     var less = require('gulp-less');
+    var uglify = require('gulp-uglify');
+    var order = require('gulp-order');
     var browserSync = require('browser-sync').create();
 
     /**
@@ -17,7 +19,18 @@
      * pack.app
      */
     gulp.task('pack.app', function () {
-
+        return gulp
+            .src('./app/scripts/**/*.js')
+            .pipe(order([
+                '**/*.util.js',
+                '**/*.module.js',
+                '**/*.service.js',
+                '**/*.directive.js',
+                '**/*.controller.js'
+            ]))
+            .pipe(concat('app.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest('./app/dist/js'));
     });
 
     /**
@@ -31,7 +44,8 @@
                 'node_modules/jquery/dist/jquery.min.js',
                 'node_modules/bootstrap/dist/js/bootstrap.js'
             ])
-            .pipe(concat('app.js'))
+            .pipe(uglify())
+            .pipe(concat('vendors.js'))
             .pipe(gulp.dest('./app/dist/js/'));
     })
 
@@ -47,4 +61,6 @@
     });
 
     gulp.watch('app/scripts/**/*.js', ['pack.app', 'pack.vendors']).on('change', function() { browserSync.reload(); });
+    gulp.watch('**/*.html').on('change', function () { browserSync.reload(); })
+    gulp.watch('**/*.css').on('change', function() { browserSync.reload(); })
 })();
